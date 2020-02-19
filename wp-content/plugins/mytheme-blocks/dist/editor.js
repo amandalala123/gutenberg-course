@@ -117,6 +117,70 @@ registerBlockType('mytheme-blocks/firstblock', {
 
 /***/ }),
 
+/***/ "./src/blocks/secondblock/index.js":
+/*!*****************************************!*\
+  !*** ./src/blocks/secondblock/index.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var _jsxFileName = "/Users/amandagoodrick/Documents/Work/UdemyCourses/gutenberg-blocks/wordpress/wp-content/plugins/mytheme-blocks/src/blocks/secondblock/index.js";
+// wp.block
+var registerBlockType = wp.blocks.registerBlockType;
+var __ = wp.i18n.__;
+registerBlockType('mytheme-blocks/secondblock', {
+  title: __('Second Block', 'mytheme-blocks'),
+  description: __('My second block', 'mytheme-blocks'),
+  category: 'layout',
+  icon: wp.element.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24",
+    viewBox: "0 0 24 24",
+    width: "24",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }, wp.element.createElement("path", {
+    d: "M0 0h24v24H0V0z",
+    fill: "none",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }), wp.element.createElement("path", {
+    d: "M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  })),
+  keywords: [__('photo', 'mytheme-blocks'), __('image', 'mytheme-blocks')],
+  edit: function edit() {
+    return wp.element.createElement("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 12
+      },
+      __self: this
+    }, "Editor");
+  },
+  save: function save() {
+    return wp.element.createElement("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 15
+      },
+      __self: this
+    }, "Saved Content");
+  }
+});
+
+/***/ }),
+
 /***/ "./src/editor.js":
 /*!***********************!*\
   !*** ./src/editor.js ***!
@@ -128,6 +192,9 @@ registerBlockType('mytheme-blocks/firstblock', {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blocks_firstblock__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./blocks/firstblock */ "./src/blocks/firstblock/index.js");
 /* harmony import */ var _blocks_firstblock__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_blocks_firstblock__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _blocks_secondblock__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./blocks/secondblock */ "./src/blocks/secondblock/index.js");
+/* harmony import */ var _blocks_secondblock__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_blocks_secondblock__WEBPACK_IMPORTED_MODULE_1__);
+
 
 
 /***/ })
