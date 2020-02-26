@@ -1,9 +1,8 @@
 // wp.block
 import './styles.editor.scss';
+import { registerBlockType } from '@wordpress/blocks';
+import { __ } from '@wordpress/i18n';
 
-// Registered with ES6 and JSX 
-const { registerBlockType } = wp.blocks;
-const { __ } = wp.i18n;
 
 registerBlockType('mytheme-blocks/secondblock', {
 	title: __('Second Block', 'mytheme-blocks'),

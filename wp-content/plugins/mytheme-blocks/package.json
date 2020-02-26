@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack --mode=development --watch",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production && gulp bundle"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/alialaa/gutenberg-course-webpack#readme",
   "dependencies": {
+    "@wordpress/blocks": "^6.12.0",
+    "@wordpress/i18n": "^3.9.0",
     "jquery": "^3.4.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
@@ -32,6 +34,8 @@
     "browserslist": "^4.8.7",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.4.2",
+    "gulp": "^4.0.2",
+    "gulp-zip": "^5.0.1",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.1",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
