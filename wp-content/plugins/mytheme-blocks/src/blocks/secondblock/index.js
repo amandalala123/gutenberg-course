@@ -2,7 +2,7 @@
 import "./styles.editor.scss";
 import { registerBlockType } from "@wordpress/blocks";
 import { __ } from "@wordpress/i18n";
-import { RichText, BlockControls } from "@wordpress/editor";
+import { RichText, BlockControls, AlignmentToolbar } from "@wordpress/editor";
 import { Toolbar, DropdownMenu } from "@wordpress/components";
 
 registerBlockType("mytheme-blocks/secondblock", {
@@ -26,79 +26,26 @@ registerBlockType("mytheme-blocks/secondblock", {
             type: 'string',
             source: 'html',
             selector: 'p'
+        }, 
+        alignment: {
+            type: 'string'
         }
     },
     edit: ({ className, attributes, setAttributes }) => {
-        const { content } = attributes;
+        const { content, alignment } = attributes;
         const onChangeContent = (content) => {
             setAttributes({ content })
         }
+        const onChangeAlignment = ( alignment ) => {
+            setAttributes({ alignment })
+        }
         return (
         <>
-            <BlockControls 
-                controls={[
-                    [{
-                        icon: 'wordpress',
-                        title: __('test', 'mytheme-blocks'),
-                        onClick: ()=> alert(true),
-                        isActive: true
-                    }],
-                    [{
-                        icon: 'wordpress',
-                        title: __('test', 'mytheme-blocks'),
-                        onClick: ()=> alert(true),
-                        isActive: false
-                    }]
-
-
-                ]}
-            >
-                <Toolbar
-                    isCollapsed
-                    controls={[
-                        [{
-                            icon: 'wordpress',
-                            title: __('test', 'mytheme-blocks'),
-                            onClick: ()=> alert(true),
-                            isActive: true
-                        }],
-                        [{
-                            icon: 'wordpress',
-                            title: __('test', 'mytheme-blocks'),
-                            onClick: ()=> alert(true),
-                            isActive: false
-                        }]
-
-
-                    ]}
-
+            <BlockControls>
+                <AlignmentToolbar
+                    value={alignment}
+                    onChange={(v) => console.log(v)}
                 />
-                {(content && content.length > 0) &&
-                <Toolbar>
-                    <DropdownMenu 
-                        icon="editor-table"
-                        label={__('test', 'mytheme-blocks')}
-                        controls={[
-                            [{
-                                icon: 'wordpress',
-                                title: __('test', 'mytheme-blocks'),
-                                onClick: ()=> alert(true),
-                                isActive: true
-                            }],
-                            [{
-                                icon: 'wordpress',
-                                title: __('test', 'mytheme-blocks'),
-                                onClick: ()=> alert(true),
-                                isActive: false
-                            }]
-
-
-                        ]}
-
-                    />
-                </Toolbar>
-                }
-
             </BlockControls>
             <RichText 
                 tagname="p"
@@ -106,16 +53,18 @@ registerBlockType("mytheme-blocks/secondblock", {
                 onChange={ onChangeContent }
                 value= {content}
                 formattingControls={['bold']}
+                style={ { textAlign: alignment } }
 
             />
         </>
         );
     },
     save: ({ attributes }) => {
-        const { content } = attributes;
+        const { content, alignment } = attributes;
         return <RichText.Content
             tagName="p"
-            value={content} 
+            value={ content } 
+            style={ { textAlign: alignment } }
         />;
     }
 });
